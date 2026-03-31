@@ -22,3 +22,10 @@ app.get("/error", (req, res, next) => {
 
 app.use(errorHandler);
 app.listen(3000);
+
+
+// app.use Vs app.get
+// app.use runs for every method, does not care about headers and used in middleware
+// app.get runs specifically for get request and for particular route handling
+// next is a middleware parameter that is passed and handles controls over to the next middleware function
+// if next isnt pasnt req will eventually time out into a hang state
